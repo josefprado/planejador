@@ -1,0 +1,9 @@
+{
+  "name": "Planejador de Viagens: Lá em Orlando",
+  "description": "O planejador de viagens completo para sua aventura. Crie um contador regressivo, organize seu roteiro dia a dia, use checklists inteligentes, salve documentos e compartilhe o planejamento com amigos.",
+  "requestFramePermissions": [
+    "camera",
+    "geolocation"
+  ],
+  "prompt": ""
+}

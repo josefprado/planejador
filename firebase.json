@@ -1,0 +1,40 @@
+{
+  "hosting": {
+    "public": "dist",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "/admin",
+        "destination": "/admin.html"
+      },
+      {
+        "source": "/admin/**",
+        "destination": "/admin.html"
+      },
+      {
+        "source": "/eventos/**",
+        "destination": "/index.html"
+      },
+      {
+        "source": "/:path((?!.*\\.).*)",
+        "destination": "/index.html"
+      }
+    ]
+  },
+  "functions": {
+    "source": "functions",
+    "runtime": "nodejs20",
+    "secrets": ["META_CAPI_ACCESS_TOKEN", "TRIPADVISOR_API_KEY", "OPENWEATHER_API_KEY", "GEMINI_API_KEY", "GOOGLE_CALENDAR_API_KEY", "GOOGLE_MAPS_API_KEY", "TICKETMASTER_API_KEY"],
+    "predeploy": [
+      "npm --prefix \"$RESOURCE_DIR\" install"
+    ]
+  },
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  }
+}

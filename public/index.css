@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+  Melhorias de Acessibilidade para o Modo de Cores Forçadas (ex: Alto Contraste do Windows).
+  Este bloco aborda a descontinuação do `-ms-high-contrast` utilizando o padrão moderno da W3C,
+  garantindo que o aplicativo permaneça acessível e à prova de futuro.
+*/
+@media (forced-colors: active) {
+  /* Garante que links sejam claramente visíveis com as cores do sistema */
+  a {
+    color: LinkText;
+    text-decoration: underline;
+  }
+
+  /* Torna o foco altamente visível em elementos interativos */
+  button:focus,
+  a:focus,
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: 2px solid Highlight;
+    outline-offset: 2px;
+  }
+
+  /* Garante que botões e campos de formulário tenham bordas claras */
+  button,
+  input,
+  select,
+  textarea {
+    border: 1px solid ButtonText;
+    background-color: Canvas;
+    color: Text;
+  }
+
+  /* Marca claramente itens selecionados/checados */
+  input[type="checkbox"]:checked,
+  input[type="radio"]:checked {
+    background-color: Highlight;
+  }
+
+  /* Garante que ícones SVG herdem a cor do texto ao redor para serem visíveis */
+  svg {
+    fill: currentColor;
+  }
+}
